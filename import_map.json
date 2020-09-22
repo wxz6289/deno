@@ -1,0 +1,5 @@
+{
+   "imports": {
+      "fmt/": "https://deno.land/std@0.65.0/fmt/"
+   }
+}
