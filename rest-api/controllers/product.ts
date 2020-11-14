@@ -29,7 +29,7 @@ const getProducts = ({ response }: { response: any}) => {
 // @desc Get single product
 // @route GET /api/v1/products/:id
 const getProduct = async ({ params, response }: { params: { id: string}, response: any}) => {
-    const product: Product| undefined = products.find(p => p.id === params.id) 
+    const product: Product | undefined = products.find(p => p.id === params.id) 
     if(product) {
        response.status = 200;
         response.body = {
@@ -57,9 +57,12 @@ const addProduct = async ({ response, request }: { response: any, request: any})
             msg: "No data"
         }
     } else {
-        const product: Product = body.value;
+        let bodyValue: any = await body.value;
+        let product: Product =  JSON.parse(bodyValue);
+        
         product.id = v4.generate();
         products.push(product);
+        console.log(product, 'product');
         response.status = 201;
         response.body = {
             success: true,
@@ -75,9 +78,10 @@ const updateProduct = async ({ response, params,  request }: { response: any, pa
     const product: Product| undefined = products.find(p => p.id === params.id);
     if(product){
         const body = await request.body();
-        const updateData: { name?: string, description?: string, price?: number} = body.value;
-        products = products.map(p => p.id === params.id? {...p, ...updateData}: p);
-        response.status = 200;
+        
+        const updateData: { name?: string, description?: string, price?: number} = await body.value;
+        products = products.map(p => p.id === params.id? ({...p, ...updateData }): p);
+       
         response.status = 200;
         response.body = {
             success: true,
@@ -96,12 +100,22 @@ const updateProduct = async ({ response, params,  request }: { response: any, pa
 // @desc Delete  product
 // @route DELETE /api/v1/products
 const deleteProduct = ({ response, params }: { response: any, params: { id: string}}) => {
-   const product: Product = products.filter(p => p.id === params.id)
-   response.status = 200; 
-   response.body = {
-        success: true,
-        data: 'Product removed'
+   const index = products.findIndex(p => p.id === params.id);
+   if(index >=0 ){
+    products.splice(index, 1);
+    response.status = 200; 
+    response.body = {
+            success: true,
+            data: 'Product removed'
+        }
+    } else {
+        response.status = 404;
+        response.body = {
+            success: false,
+            data: "No product found"
+        }
     }
+   
 }
 
 export { getProducts, getProduct, addProduct, updateProduct, deleteProduct };
