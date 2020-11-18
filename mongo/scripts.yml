@@ -1,0 +1,6 @@
+scripts:
+  start:
+    cmd: "deno run -A --unstable --no-check main.ts"
+    desc: "run main.ts"
+  unstable: true
+  

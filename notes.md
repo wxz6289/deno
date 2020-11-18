@@ -73,4 +73,8 @@ assertAsyncThrows()
 
 set http_proxy http://host:port
 
+deno install -qAf --unstable https://deno.land/x/denon@2.4.4/denon.ts
+
+set PATH=%PATH%;C:\Users\Dreamer\.deno\bin
+
 
