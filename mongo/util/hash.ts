@@ -8,7 +8,7 @@ export default {
     async verify(hash: string, text: string) {
         console.log(hash, text, "verify");
         
-        const result = await  bcrypt.compare(text, hash);
+        const result = await bcrypt.compare(text, hash);
         
         return result;
     }
