@@ -23,7 +23,7 @@ const getProducts = ({ response }: { response: any}) => {
         success: true,
         data: products
     }
-}
+};
 
 
 // @desc Get single product
@@ -43,13 +43,20 @@ const getProduct = async ({ params, response }: { params: { id: string}, respons
                 msg: "No product found"
             }
     }
-}
+};
+
+const mock = async ({ response, request }: { response: any, request: any }) => {
+    const body = await request.body();
+    let product = await body.value;
+    console.log(product);
+};
 
 
 // @desc Add  product
 // @route POST /api/v1/products
 const addProduct = async ({ response, request }: { response: any, request: any}) => {
     const body = await request.body();
+    
     if(!request.hasBody){
         response.status = 400;
         response.body = {
@@ -57,18 +64,14 @@ const addProduct = async ({ response, request }: { response: any, request: any})
             msg: "No data"
         }
     } else {
-        let bodyValue: any = await body.value;
-        let product: Product =  JSON.parse(bodyValue);
-        
+        let product: any = await body.value;
         product.id = v4.generate();
         products.push(product);
-        console.log(product, 'product');
         response.status = 201;
         response.body = {
             success: true,
             data: product
         }
-
     }
 }
 
@@ -118,4 +121,4 @@ const deleteProduct = ({ response, params }: { response: any, params: { id: stri
    
 }
 
-export { getProducts, getProduct, addProduct, updateProduct, deleteProduct };
+export { getProducts, getProduct, addProduct, updateProduct, deleteProduct, mock };

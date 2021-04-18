@@ -2,12 +2,18 @@ Deno是一个默认安全并具有很好开发体验的JavaScript/TypeScript运�
 Ryan Dahl 2020.5.13
 
 MAIN FEATURES
-+ ES6 modules import syntax
-+ Top level await
-+ More compatible with Browser
++ Use TypeScript or JavaScript 
++ Security by Default
++ De-centralized Packages
++ Standard Libray
++ Modern JS
++ ES Modules
++ Top level / First Class await
++ Built In Testing
++ Browser Compatible API
   + fetch API
   + Browser API: window
-+ Security flags
++ Execute Wasm Binaries
 
 
 What advantages does it have?
@@ -25,4 +31,10 @@ HOW TO EXECUTE TYPESCRIPT?
 + Write TypeScript Code
 + Compile into *.js - tsc index.ts
 + Execute *.js in browser or in Node.js
+
+De-centralized Packages
++ No more NPM packages / package.json
++ Packages are importe from a URL
++ Cached to hard drive on load
++ Extensive Standard libray for things like fs, datetime, http, etc.
 

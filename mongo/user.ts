@@ -23,8 +23,6 @@ export default {
        
     },
     async store(ctx) {
-        console.log("fuck");
-        
         const insertData = await validation.validate(ctx);
         console.log(insertData, "insertData");
         
