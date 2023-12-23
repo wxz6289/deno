@@ -30,16 +30,12 @@ console.log(new TextDecoder().decode(await Deno.readFile('./test.txt'))); */
 // console.log(objs);
 
 class A {
-    x = 10;
-    y = "Hi";
-    [Deno.customInspect](): string {
-        return `x=${this.x}, y=${this.y}`;
-    }  
+  x = 10;
+  y = "Hi";
+  [Deno.customInspect](): string {
+    return `x=${this.x}, y=${this.y}`;
+  }
 }
 
 const ins = Deno.inspect(new A());
 console.log(ins);
-
-
-
-

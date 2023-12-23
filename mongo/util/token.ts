@@ -1,4 +1,9 @@
-import { create, verify, decode, getNumericDate  } from 'https://deno.land/x/djwt@v1.9/mod.ts';
+import {
+  create,
+  decode,
+  getNumericDate,
+  verify,
+} from "https://deno.land/x/djwt@v1.9/mod.ts";
 
 // const jwt = await create({ alg: "HS512", typ: "JWT" }, { foo: "bar" }, "secret")
 
@@ -12,25 +17,28 @@ import { create, verify, decode, getNumericDate  } from 'https://deno.land/x/djw
 // console.log(p, signature, header);
 
 export default {
-    async generate(uid: string): string {
-        const header = { alg: "HS512", typ: "JWT" };
-        const payload = { uid, exp: getNumericDate(new Date("2020-11-19 23:50:00"))}
-        const secret = "king";
-        let jwt = await create(header, payload, secret);
-        console.log(jwt, payload);
-        return jwt
-    },
-    async validate(token: string, key: string) {
-        console.log(token, "token12");
-        let { payload } =  await decode(token);
-        console.log(payload, "t");
-        
-        // let payload =  await verify(token,  key, "HS512");
-        // console.log(payload, "payload");
-        return  payload;
-    },
-    async fetchUserId(token) {
-        const { payload } = await decode(token);
-        return payload;
-    }
-}
+  async generate(uid: string): string {
+    const header = { alg: "HS512", typ: "JWT" };
+    const payload = {
+      uid,
+      exp: getNumericDate(new Date("2020-11-19 23:50:00")),
+    };
+    const secret = "king";
+    let jwt = await create(header, payload, secret);
+    console.log(jwt, payload);
+    return jwt;
+  },
+  async validate(token: string, key: string) {
+    console.log(token, "token12");
+    let { payload } = await decode(token);
+    console.log(payload, "t");
+
+    // let payload =  await verify(token,  key, "HS512");
+    // console.log(payload, "payload");
+    return payload;
+  },
+  async fetchUserId(token) {
+    const { payload } = await decode(token);
+    return payload;
+  },
+};

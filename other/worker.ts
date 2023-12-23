@@ -1,7 +1,7 @@
 console.log("hello world");
 self.onmessage = async (e) => {
-    const { filename } = e.data;
-    const text = await Deno.readTextFile(filename);
-    console.log(text);
-    self.close();
-}
+  const { filename } = e.data;
+  const text = await Deno.readTextFile(filename);
+  console.log(text);
+  self.close();
+};

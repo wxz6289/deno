@@ -1,3 +1,3 @@
-process.argv.forEach(v => {
-    console.log(v);
+process.argv.forEach((v) => {
+  console.log(v);
 });

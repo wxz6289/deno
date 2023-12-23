@@ -1,3 +1,3 @@
-import { dayOfYear } from 'https://deno.land/std/datetime/mod.ts';
+import { dayOfYear } from "https://deno.land/std/datetime/mod.ts";
 
-console.log(dayOfYear(new Date("2021-4-16")));
+console.log(dayOfYear(new Date("2023-7-28")));

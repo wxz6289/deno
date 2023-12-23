@@ -14,6 +14,6 @@
 
 // console.table(Deno.metrics());
 
-for await (const dir of Deno.readDir('./test')) {
-    console.log(dir.name)
+for await (const dir of Deno.readDir("./test")) {
+  console.log(dir.name);
 }

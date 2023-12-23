@@ -1,0 +1,13 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev2": "deno run --allow-env --allow-sys chalk.ts",
+    "start": "deno run --allow-all express.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
