@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "echo deno!"
+  },
+  "dependencies": {
+    "@types/deno": "^2.3.0",
+    "@types/react": "^19.1.6"
+  }
+}

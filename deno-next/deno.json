@@ -1,0 +1,32 @@
+{
+  "nodeModulesDir": "auto",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "preserve",
+    "jsxImportSource": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./app/*"]
+    }
+  },
+  "unstable": [
+    "unsafe-proto",
+    "sloppy-imports"
+  ],
+  "tasks": {
+    "dev": "deno run -A --unstable-detect-cjs npm:next@latest dev",
+    "build": "deno run -A --unstable-detect-cjs npm:next@latest build",
+    "start": "deno run -A --unstable-detect-cjs npm:next@latest start",
+    "lint": "biome check",
+    "format": "biome format --write"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
+  }
+}

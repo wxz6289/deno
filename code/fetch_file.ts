@@ -5,9 +5,11 @@ if (fileResponse.body) {
   await fileResponse.body.pipeTo(file.writable);
 } */
 
-const file = await Deno.open("./logo.svg", { read: true });
+const file = await Deno.open('./logo.svg', { read: true });
 
-await fetch("https://example.com/", {
-  method: "POST",
+await fetch('https://example.com/', {
+  method: 'POST',
   body: file.readable,
 });
+
+export {};

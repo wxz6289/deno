@@ -1,31 +1,42 @@
-import { Application, Router } from "https://deno.land/x/oak@v11.1.0/mod.ts";
-import { oakCors } from "https://deno.land/x/cors@v1.2.2/mod.ts";
-import data from "./data.json" assert { type: "json" };
+import { Application, Router } from '@oak/oak';
+import { oakCors } from '@tajpouria/cors';
+import routeStaticFileFrom from './util/routeStaticFilesFrom.ts';
+import data from './data.json' with { type: "json" };
 
+export const app = new Application();
 const router = new Router();
-router
-  .get("/", (context) => {
-    context.response.body = "Welcome to dinosaur API!";
-  })
-  .get("/api", (context) => {
-    context.response.body = data;
-  })
-  .get("/api/:dinosaur", (context) => {
-    if (context?.params?.dinosaur) {
-      const found = data.find((item) =>
-        item.name.toLowerCase() === context.params.dinosaur.toLowerCase()
-      );
-      if (found) {
-        context.response.body = found;
-      } else {
-        context.response.body = "No dinosaurs found.";
-      }
-    }
-  });
 
-const app = new Application();
-app.use(oakCors()); // Enable CORS for All Routes
+router.get('/api/dinosaurs', (context: any) => {
+  context.response.body = data;
+});
+
+router.get('/api/dinosaurs/:dinosaur', (context: any) => {
+  const dinosaur = context.params?.dinosaur;
+  if (!dinosaur) {
+    context.response.status = 400;
+    context.response.body = { message: 'Dinosaur name is required' };
+    return;
+  }
+  const foundDinosaur = data.find(d => d.name.toLowerCase() === dinosaur.toLowerCase());
+  if (foundDinosaur) {
+    context.response.body = foundDinosaur;
+  } else {
+    context.response.status = 404;
+    context.response.body = { message: 'Dinosaur not found' };
+  }
+});
+
+app.use(oakCors());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-await app.listen({ port: 8000 });
+app.use(routeStaticFileFrom([
+  `${Deno.cwd()}/dist`,
+  `${Deno.cwd()}/public`
+]));
+
+if (import.meta.main) {
+  const PORT = Deno.env.get('PORT') || 8000;
+  console.log(`Server is running on http://localhost:${PORT}`);
+  await app.listen({ port: +PORT });
+}

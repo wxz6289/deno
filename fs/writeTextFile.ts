@@ -1,0 +1,1 @@
+await Deno.writeTextFile('./hello.txt', 'Hi Deno!\n', { append: true });

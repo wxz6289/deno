@@ -1,0 +1,4 @@
+.deno_plugins
+.vscode
+npm/node_modules
+test/vendor

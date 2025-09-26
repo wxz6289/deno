@@ -1,4 +1,4 @@
-# Deno 中框架
+# 框架
 
 - [Fresh](https://fresh.deno.dev/) 类React
 - [Aleph.js](https://alephjs.org/) 类Next.js

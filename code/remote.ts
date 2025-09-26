@@ -3,7 +3,7 @@
 /* import { add, multiply } from "ramda";
 import { red } from "fmt/colors.ts"; */
 
-import { add, multiply, red } from '../deps.ts'
+import { add, multiply, red } from '../learn/deps.ts';
 
 function totalCost(outbound: number, inbound: number, tax: number): number {
   return multiply(add(outbound, inbound), tax);

@@ -32,7 +32,7 @@ console.log(new TextDecoder().decode(await Deno.readFile('./test.txt'))); */
 class A {
   x = 10;
   y = "Hi";
-  [Deno.customInspect](): string {
+  [Symbol.for("Deno.customInspect")](): string {
     return `x=${this.x}, y=${this.y}`;
   }
 }

@@ -2,11 +2,11 @@
 const jsonData = await jsonResponse.json();
 console.log(jsonData); */
 
-const res = await fetch("https://deno.com");
+const res = await fetch('https://deno.com');
 const text = await res.text();
 console.log(text);
 
-/* 
+/*
 try {
   await fetch("https://does.not.exist/");
 } catch (error) {

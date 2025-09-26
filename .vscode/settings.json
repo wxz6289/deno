@@ -1,12 +1,16 @@
 {
   "deno.enable": true,
+  "deno.unstable": [
+  ],
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "editor.formatOnSave": true,
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
-  "deno.unstable": true,
   "deno.lint": true,
-  "cmake.configureOnOpen": false
+  "cmake.configureOnOpen": false,
+  "prettier.eslintIntegration": true
 }

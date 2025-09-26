@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "mod": "https://deno.land/std@0.196.0/dotenv/mod.ts"
+  }
+}

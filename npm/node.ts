@@ -1,3 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFile } from "node:fs/promises";
 
-console.log(readFileSync("package.json", { encoding: "utf8" }));
+const content = await readFile("./package.json", { encoding: "utf8" });
+console.log(content);

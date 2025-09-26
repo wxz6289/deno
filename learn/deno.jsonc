@@ -1,0 +1,63 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "lib": [
+      "deno.ns",
+      "dom"
+    ],
+    "types": [
+      "@types/deno",
+      "npm:@types/react"
+    ]
+  },
+  // "importMap": "./import_map.json",
+  "imports": {
+    "chalk": "npm:chalk@5",
+    "$std": "https://deno.land/std@0.196.0/",
+    "dotenv": "https://deno.land/std@0.196.0/dotenv/mod.ts",
+    "flags": "https://deno.land/std@0.196.0/flags/mod.ts",
+    "fmt/": "https://deno.land/std@0.196.0/fmt/",
+    "fresh": "https://deno.land/x/fresh@1.4.3/dev.ts",
+    "lodash": "npm:lodash-es@4.17.21",
+    "ramda": "https://deno.land/x/ramda@v0.27.2/mod.ts",
+    "react": "npm:react@18.2.0"
+  },
+  "lint": {
+    "include": ["fs/"],
+    "exclude": ["deno-prisma/**", "deno-react/**"],
+    "rules": {
+      "tags": ["recommended"],
+      "include": [],
+      "exclude": []
+    }
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": false,
+    "proseWrap": "preserve",
+    "include": ["src/**"],
+    "exclude": ["node_modules"]
+  },
+  "lock": true,
+  "nodeModulesDir": "auto",
+  "npmRegistry": "",
+  "unstable": [],
+  "rules": {},
+  "tasks": {
+    "dev": "deno run --watch main.ts",
+    "lint": "deno lint --fix",
+    "fmt": "deno fmt --check",
+    "test": "deno test --allow-all"
+  },
+  "deploy": {
+    "project": "cdfd125e-bc6d-4cad-9ae0-e4a1650ea4f2",
+    "exclude": [],
+    "include": [
+      "main.ts"
+    ],
+    "entrypoint": "main.ts"
+  }
+}
