@@ -1,4 +1,5 @@
 {
+  "nodeModulesDir": "auto",
   "workspace": [
     "./add",
     "./test",
@@ -6,6 +7,9 @@
     "./learn",
     "./bundle",
     "./fs",
+    "./npm",
+    "./http",
+    "./deno-fresh",
     "./ffi/n-api"
   ],
   "tasks": {

@@ -15,6 +15,7 @@ deno run --allow-net http/deno-websockets.ts
 ## 📱 客户端选项
 
 ### 1. 简单客户端 (simple-client.ts)
+
 最基础的客户端，连接后发送一个 "ping" 消息。
 
 ```bash
@@ -22,6 +23,7 @@ deno run --allow-net http/simple-client.ts
 ```
 
 ### 2. 功能完整的客户端 (websocket-client.ts)
+
 包含完整的事件处理、心跳机制和多种消息类型。
 
 ```bash
@@ -29,6 +31,7 @@ deno run --allow-net http/websocket-client.ts
 ```
 
 ### 3. 交互式客户端 (interactive-client.ts)
+
 允许用户输入消息并实时发送到服务器。
 
 ```bash
@@ -56,6 +59,7 @@ deno run --allow-net --allow-read http/interactive-client.ts
 ## 📝 预期输出
 
 ### 服务器端输出：
+
 ```
 Listening on http://localhost:8000/
 a client connected
@@ -67,6 +71,7 @@ message received: heartbeat
 ```
 
 ### 客户端输出：
+
 ```
 ✅ 已成功连接到 WebSocket 服务器
 📤 发送消息: Hello Server!

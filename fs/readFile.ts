@@ -1,2 +1,3 @@
-const content = await Deno.readTextFile("./hello.txt");
+const content = await Deno.readTextFile("test/hello.txt");
 console.log(content);
+export { };

@@ -1,8 +1,14 @@
-import { Response } from "https://deno.land/std/http/server.ts";
-import { deleteCookie } from "https://deno.land/std/http/cookie.ts";
+// @ts-ignore
+import { deleteCookie } from '@std/http/cookie'
 
-let response: Response = {};
-deleteCookie(response, "deno");
+Deno.serve((req: Request) => {
+  let response: Response = new Response('Cookie Deleted', {
+    headers: { 'set-cookie': 'deno=; Max-Age=0; Path=/' },
+  });
 
-const cookieHeader = response.headers && response.headers.get("set-cookie");
-console.log("Set-Cookie:", cookieHeader);
+  deleteCookie(response.headers, 'set-cookie', { path: '/' })
+
+  const cookieHeader = response.headers && response.headers.get('set-cookie')
+  console.log('Set-Cookie:', cookieHeader)
+  return response
+})
