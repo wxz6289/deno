@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Dino } from "@/types.ts";
+import type { Dino } from "../../types.ts";
 import { useParams } from "next/navigation";
 export default function Home() {
   const { name } = useParams();

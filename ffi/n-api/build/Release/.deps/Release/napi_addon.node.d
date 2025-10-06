@@ -1,0 +1,1 @@
+cmd_Release/napi_addon.node := c++ -bundle -undefined dynamic_lookup -Wl,-search_paths_first -mmacosx-version-min=10.9 -arch arm64 -L./Release -stdlib=libc++ -L/opt/homebrew/opt/mysql-client/lib -o Release/napi_addon.node Release/obj.target/napi_addon/napi_addon.o 

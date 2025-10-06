@@ -1,6 +1,0 @@
-{
-  "imports": {
-    "https://deno.land/std/datetime/mod.ts": "./deno.land/std@0.196.0/datetime/mod.ts",
-    "https://deno.land/": "./deno.land/"
-  }
-}

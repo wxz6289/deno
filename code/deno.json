@@ -8,13 +8,13 @@
   "imports": {
     "@oak/oak": "jsr:@oak/oak@^17.1.6",
     "@sentry/node": "npm:@sentry/node@^10.15.0",
+    "@std/expect": "jsr:@std/expect@^1.0.17",
+    "@std/jsonc": "jsr:@std/jsonc@^1.0.2",
     "@std/streams": "jsr:@std/streams@^1.0.12",
+    "@std/testing": "jsr:@std/testing@^1.0.15",
     "sing": "jsr:@eveporcello/sing@^0.1.0",
-    "@std/assert": "jsr:@std/assert@1",
+    "@std/assert": "jsr:@std/assert@^1.0.14",
     "@std/path": "jsr:@std/path@1",
-    "std/streams": "jsr:@std/streams/mod.ts",
-    "std/assert": "https://deno.land/std@0.196.0/assert/mod.ts",
-    "std/async/delay": "https://deno.land/std@0.196.0/async/delay.ts",
     "@openai/openai": "jsr:@openai/openai",
     "dotenv": "https://deno.land/std@0.196.0/dotenv/mod.ts",
     "flags": "https://deno.land/std@0.196.0/flags/mod.ts"

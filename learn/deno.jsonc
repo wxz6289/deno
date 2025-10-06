@@ -12,6 +12,7 @@
   },
   // "importMap": "./import_map.json",
   "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.14",
     "chalk": "npm:chalk@5",
     "$std": "https://deno.land/std@0.196.0/",
     "dotenv": "https://deno.land/std@0.196.0/dotenv/mod.ts",
@@ -20,7 +21,7 @@
     "fresh": "https://deno.land/x/fresh@1.4.3/dev.ts",
     "lodash": "npm:lodash-es@4.17.21",
     "ramda": "https://deno.land/x/ramda@v0.27.2/mod.ts",
-    "react": "npm:react@18.2.0"
+    "react": "npm:react@19.2.0"
   },
   "lint": {
     "include": ["fs/"],
@@ -41,8 +42,8 @@
     "include": ["src/**"],
     "exclude": ["node_modules"]
   },
-  "lock": true,
-  "nodeModulesDir": "auto",
+  // "lock": true,
+  // "nodeModulesDir": "auto",
   "npmRegistry": "",
   "unstable": [],
   "rules": {},

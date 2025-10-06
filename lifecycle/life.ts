@@ -4,15 +4,20 @@ const handler = (e: Event) => {
   console.log(`got ${e.type} event in event handler {main}`);
 };
 
-window.addEventListener("load", handler);
-window.addEventListener("unload", handler);
+globalThis.addEventListener("load", handler);
+globalThis.addEventListener("beforeunload", handler);
+globalThis.addEventListener("unload", handler);
 
-window.onload = (e: Event) => {
+globalThis.onload = (e: Event) => {
   console.log(`got ${e.type} event in onload function {main}`);
 };
 
-window.onunload = (e: Event) => {
-  console.log(`got ${e.type} event in in onunload function {main}`);
+globalThis.onbeforeunload = (e: Event) => {
+  console.log(`got ${e.type} event in beforeunload function {main}`);
 };
 
-console.log("log from the main");
+globalThis.onunload = (e: Event) => {
+  console.log(`got ${e.type} event in onunload function {main}`);
+};
+
+console.log("log from the life.ts");

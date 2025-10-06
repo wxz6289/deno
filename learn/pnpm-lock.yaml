@@ -8,15 +8,29 @@ importers:
 
   .:
     dependencies:
+      '@std/fs':
+        specifier: npm:@jsr/std__fs@^1.0.19
+        version: '@jsr/std__fs@1.0.19'
+      '@std/path':
+        specifier: npm:@jsr/std__path@^1.1.2
+        version: '@jsr/std__path@1.1.2'
       '@types/deno':
         specifier: ^2.3.0
         version: 2.3.0
-    devDependencies:
       '@types/react':
         specifier: ^19.1.6
         version: 19.1.6
 
 packages:
+
+  '@jsr/std__fs@1.0.19':
+    resolution: {integrity: sha512-TEjyE8g+46jPlu7dJHLrwc8NMGl8zfG+JjWxyNQyDbxP0RtqZ4JmYZfR9vy4RWYWJQbLpw6Kbt2n+K/2zAO/JA==, tarball: https://npm.jsr.io/~/11/@jsr/std__fs/1.0.19.tgz}
+
+  '@jsr/std__internal@1.0.10':
+    resolution: {integrity: sha512-fmD6yKep/sMnB2yPQU/REZG7Z4N9SZwcUBNnceo4QkXk67l3JEfxHoROQ/YHeVSOmq6x55Ra6nuMjz2ib3nj3g==, tarball: https://npm.jsr.io/~/11/@jsr/std__internal/1.0.10.tgz}
+
+  '@jsr/std__path@1.1.2':
+    resolution: {integrity: sha512-5hkOR1s5M7am02Bn9KS+SNMNwUSivz7t7/w2HBhFIfO7Eh8+mWilaZ+1tdanV9aaSHr4c99Zo4Da+cCSuzUOdA==, tarball: https://npm.jsr.io/~/11/@jsr/std__path/1.1.2.tgz}
 
   '@types/deno@2.3.0':
     resolution: {integrity: sha512-/4SyefQpKjwNKGkq9qG3Ln7MazfbWKvydyVFBnXzP5OQA4u1paoFtaOe1iHKycIWHHkhYag0lPxyheThV1ijzw==}
@@ -28,6 +42,17 @@ packages:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
 snapshots:
+
+  '@jsr/std__fs@1.0.19':
+    dependencies:
+      '@jsr/std__internal': 1.0.10
+      '@jsr/std__path': 1.1.2
+
+  '@jsr/std__internal@1.0.10': {}
+
+  '@jsr/std__path@1.1.2':
+    dependencies:
+      '@jsr/std__internal': 1.0.10
 
   '@types/deno@2.3.0': {}
 

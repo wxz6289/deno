@@ -2,15 +2,20 @@ const handler = (e: Event) => {
   console.log(`got ${e.type} event in event handler {imported}`);
 };
 
-window.addEventListener("load", handler);
-window.addEventListener("unload", handler);
+globalThis.addEventListener("load", handler);
+globalThis.addEventListener("beforeunload", handler);
+globalThis.addEventListener("unload", handler);
 
-window.onload = (e: Event) => {
+globalThis.onload = (e: Event) => {
   console.log(`got ${e.type} event in onload function {imported}`);
 };
 
-window.onunload = (e: Event) => {
-  console.log(`got ${e.type} event in in onunload function {imported}`);
+globalThis.onbeforeunload = (e: Event) => {
+  console.log(`got ${e.type} event in beforeunload function {imported}`);
+};
+
+globalThis.onunload = (e: Event) => {
+  console.log(`got ${e.type} event in onunload function {imported}`);
 };
 
 console.log("log from the imported");

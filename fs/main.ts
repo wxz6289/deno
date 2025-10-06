@@ -27,8 +27,8 @@ const proc = new Deno.Command("ls", {
     "LANG": Deno.env.get("LANG") || "",
     "TERM": Deno.env.get("TERM") || "",
     "DENO_DIR": Deno.env.get("DENO_DIR") || "",
-    "DENO_INSTALL": Deno.env.get("DENO_INSTALL") || ""
-  }
+    "DENO_INSTALL": Deno.env.get("DENO_INSTALL") || "",
+  },
 });
 
 console.log(proc);

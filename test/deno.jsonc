@@ -1,9 +1,0 @@
-{
-  "tasks": {
-    "dev": "deno run --watch main.ts"
-  },
-  "lib": ["deno.ns"],
-  "compilerOptions": {
-  },
-  "importMap": "./vendor/import_map.json"
-}
