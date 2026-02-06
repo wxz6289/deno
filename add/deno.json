@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "exports": "./mod.ts",
   "fmt":{
-    "semiColons": false,
+    "semiColons": false
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1"

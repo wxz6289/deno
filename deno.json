@@ -1,5 +1,11 @@
 {
   "nodeModulesDir": "auto",
+  "importMap": "./import_map.json",
+  "dependencies": {
+    "@scope/add": "./add/mod.ts",
+    "@scope/log": "./log/index.ts",
+    "@std/assert": "jsr:@std/assert@1"
+  },
   "workspace": [
     "./add",
     "./test",
@@ -9,6 +15,7 @@
     "./fs",
     "./npm",
     "./http",
+    "./fresh",
     "./deno-fresh",
     "./ffi/n-api"
   ],
@@ -17,8 +24,19 @@
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
+    "@scope/add": "./add/mod.ts",
+    "@scope/log": "./log/index.ts",
     "chalk": "npm:chalk@^5.6.2",
     "react": "npm:react@^19.2.0",
     "react-dom": "npm:react-dom@^19.2.0"
+  },
+  "compilerOptions": {
+    "types": [
+      "jsr:@std/assert@1"
+    ],
+    "paths": {
+      "@scope/add": ["./add/mod.ts"],
+      "@scope/log": ["./log/index.ts"]
+    }
   }
 }

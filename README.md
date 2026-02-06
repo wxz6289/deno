@@ -38,7 +38,7 @@ cat ../test/dateTime.ts | deno run -
 # 升级到最新版本
 deno upgrade
 # 安装指定版本
-deno upgrade --version 1.0.1
+deno upgrade --version 2.6.8
 
 # 获取帮助信息
 deno help

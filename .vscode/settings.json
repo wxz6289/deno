@@ -2,16 +2,8 @@
   "deno.enable": true,
   "deno.unstable": [
   ],
-  "deno.enablePaths": [
-    "./worker",
-    "./code",
-    "./learn",
-    "./add",
-    "./http",
-    "./npm",
-    "./permission",
-    "./deno-fresh"
-  ],
+  "deno.config": "./deno.json",
+  "deno.enablePaths": ["./"],
   "deno.codeLens.test": true,
   "deno.codeLens.testArgs": [
     "--allow-all",
