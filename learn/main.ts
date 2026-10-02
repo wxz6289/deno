@@ -12,8 +12,8 @@ if (import.meta.main) {
   console.log(import.meta);
 }
 
-console.log(Deno.mainModule)
+console.log(import.meta.url);
 
 Deno.serve((_request: Request) => {
-  return new Response("hello world!")
+  return new Response("hello world!");
 });
